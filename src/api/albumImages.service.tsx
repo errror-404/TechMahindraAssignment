@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {AlbumImage} from '../src/interfaces/album.interface';
+import {AlbumImage} from '../interfaces/album.interface';
 
 export class AlbumImagesService {
   async get(albumId: number) {

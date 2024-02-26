@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {albumImagesService} from '../../api/albumImages.service';
+import {albumImagesService} from '../api/albumImages.service';
 import {AlbumImage} from '../interfaces/album.interface';
 
 export const useAlbum = () => {

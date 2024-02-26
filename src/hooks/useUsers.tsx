@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {usersService} from '../../api/users.service';
+import {usersService} from '../api/users.service';
 import {User} from '../interfaces/User.interface';
 import {RootState, actions, useAppSelector} from '../store/root.store';
 

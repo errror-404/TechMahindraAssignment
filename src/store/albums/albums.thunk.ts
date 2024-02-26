@@ -1,8 +1,8 @@
 import {Dispatch} from '@reduxjs/toolkit';
 import {actions} from './albums.slice';
 import {dispatchable} from '../dispatchable';
-import {usersService} from '../../../api/users.service';
-import {albumsService} from '../../../api/albums.service';
+import {usersService} from '../../api/users.service';
+import {albumsService} from '../../api/albums.service';
 
 export type Action = {
   type: string;
