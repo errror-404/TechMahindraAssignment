@@ -9,14 +9,14 @@ import AlbumDetailHeader from '../components/AlbumDetailHeader';
 type Props = StackScreenProps<MainStackParamList, 'AlbumDetailScreen'>;
 const AlbumDetailScreen = ({route}: Props) => {
   const {album} = route.params;
-  const {getImages, images} = useAlbum();
+  const {getImages, images, loading} = useAlbum();
 
   useEffect(() => {
     getImages(album.id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (!images) {
+  if (loading) {
     return <ActivityIndicator size="large" color="#000" />;
   }
 
