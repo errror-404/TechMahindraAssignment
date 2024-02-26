@@ -2,6 +2,7 @@ export interface Album {
   userId: number;
   id: number;
   title: string;
+  favorite?: boolean;
 }
 
 export interface AlbumImage {
@@ -10,4 +11,8 @@ export interface AlbumImage {
   title: string;
   url: string;
   thumbnailUrl: string;
+}
+
+export interface AlbumState {
+  albums: Album[];
 }

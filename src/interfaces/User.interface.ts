@@ -30,3 +30,7 @@ export interface Company {
   catchPhrase: string;
   bs: string;
 }
+
+export interface UserState {
+  users: User[];
+}

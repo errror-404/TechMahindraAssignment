@@ -1,4 +1,4 @@
-import {FlatList} from 'react-native';
+import {ActivityIndicator, FlatList} from 'react-native';
 import React, {useEffect} from 'react';
 import {StackScreenProps} from '@react-navigation/stack';
 import {MainStackParamList} from '../routes/MainRoute';
@@ -11,20 +11,27 @@ const AlbumDetailScreen = ({route}: Props) => {
   const {album} = route.params;
   const {getImages, images} = useAlbum();
 
-  useEffect(
-    () => {
-      getImages(album.id);
-    },
+  useEffect(() => {
+    getImages(album.id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [album],
-  );
+  }, []);
+
+  if (!images) {
+    return <ActivityIndicator size="large" color="#000" />;
+  }
 
   return (
     <FlatList
       data={images}
       keyExtractor={item => item.id.toString()}
       renderItem={({item}) => <AlbumImageCard image={item.thumbnailUrl} />}
-      ListHeaderComponent={<AlbumDetailHeader title={album.title} />}
+      ListHeaderComponent={
+        <AlbumDetailHeader
+          title={album.title}
+          isFavorite={album.favorite}
+          id={album.id}
+        />
+      }
       numColumns={3}
     />
   );

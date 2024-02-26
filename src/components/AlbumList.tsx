@@ -34,8 +34,9 @@ const AlbumList = ({user}: AlbumListProps) => {
         user.albums?.map(album => (
           <TouchableOpacity
             onPress={() => onAlbumPress(album)}
-            style={styles.albumCardStyle}>
-            <AlbumCard key={album.id} album={album} />
+            style={styles.albumCardStyle}
+            key={album.id}>
+            <AlbumCard album={album} />
           </TouchableOpacity>
         ))}
     </>
