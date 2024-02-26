@@ -1,7 +1,7 @@
 import {useState} from 'react';
-import {usersService} from '../api/users.service';
+import {usersService} from '../../api/users.service';
 import {User} from '../interfaces/User.interface';
-import {albumsService} from '../api/albums.service';
+import {albumsService} from '../../api/albums.service';
 
 export const useUsers = () => {
   const [users, setUsers] = useState<User[]>([]);

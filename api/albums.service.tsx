@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {Album} from '../interfaces/album.interface';
+import {Album} from '../src/interfaces/album.interface';
 
 export class AlbumsService {
   async get() {

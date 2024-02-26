@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {User} from '../interfaces/User.interface';
+import {User} from '../src/interfaces/User.interface';
 
 export class UsersService {
   async get() {

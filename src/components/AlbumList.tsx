@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import AlbumCard from './AlbumCard';
 import {RoutesProps} from '../routes/MainRoute';
 import {useNavigation} from '@react-navigation/native';
+import {Album} from '../interfaces/album.interface';
 
 interface AlbumListProps {
   user: User;
@@ -14,8 +15,8 @@ const AlbumList = ({user}: AlbumListProps) => {
   const [showAlbums, setShowAlbums] = React.useState(false);
   const navigation = useNavigation<RoutesProps>();
 
-  const onAlbumPress = (albumId: number) => {
-    navigation.navigate('AlbumDetailScreen', {albumId});
+  const onAlbumPress = (album: Album) => {
+    navigation.navigate('AlbumDetailScreen', {album: album});
   };
 
   return (
@@ -32,7 +33,7 @@ const AlbumList = ({user}: AlbumListProps) => {
       {showAlbums &&
         user.albums?.map(album => (
           <TouchableOpacity
-            onPress={() => onAlbumPress(album.id)}
+            onPress={() => onAlbumPress(album)}
             style={styles.albumCardStyle}>
             <AlbumCard key={album.id} album={album} />
           </TouchableOpacity>

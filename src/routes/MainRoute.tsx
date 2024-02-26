@@ -5,6 +5,7 @@ import {
 } from '@react-navigation/stack';
 import AlbumsScreen from '../screens/AlbumsScreen';
 import AlbumDetailScreen from '../screens/AlbumDetailScreen';
+import {Album} from '../interfaces/album.interface';
 
 const Stack = createStackNavigator();
 
@@ -17,9 +18,9 @@ const MainStack = () => {
   );
 };
 
-type MainStackParamList = {
+export type MainStackParamList = {
   AlbumsScreen: undefined;
-  AlbumDetailScreen: {albumId: number};
+  AlbumDetailScreen: {album: Album};
 };
 export type RoutesProps = StackNavigationProp<MainStackParamList>;
 
